@@ -1,0 +1,75 @@
+---
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import PetCard from "../components/PetCard.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Вухаті друзі — Притулок для тварин</title>
+    <style>
+      body {
+        margin: 0;
+        font-family:
+          system-ui,
+          -apple-system,
+          sans-serif;
+        background-color: #f9f9f9;
+      }
+
+      .pets-section {
+        max-width: 1100px;
+        margin: 3rem auto;
+        padding: 0 1rem;
+      }
+
+      .pets-section h2 {
+        text-align: center;
+        color: #2c3e50;
+        margin-bottom: 2rem;
+        font-size: 2rem;
+      }
+
+      .pets-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <Header />
+
+    <Hero />
+
+    <main class="pets-section" id="pets">
+      <h2>Наші підопічні</h2>
+      <div class="pets-grid">
+        <PetCard
+          name="Барсик"
+          breed="Метис / Дуже грайливий"
+          age="2 роки"
+          imageUrl="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=500"
+        />
+        <PetCard
+          name="Рекс"
+          breed="Німецька вівчарка"
+          age="3 роки"
+          imageUrl="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?q=80&w=500"
+        />
+        <PetCard
+          name="Мурка"
+          breed="Британська короткошерсна"
+          age="1 рік"
+          imageUrl="https://images.unsplash.com/photo-1573865526739-10659fec78a5?q=80&w=500"
+        />
+      </div>
+    </main>
+
+    <Footer />
+  </body>
+</html>

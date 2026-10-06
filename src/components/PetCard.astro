@@ -1,0 +1,53 @@
+---
+interface Props {
+  name: string;
+  breed: string;
+  age: string;
+  imageUrl: string;
+}
+
+const { name, breed, age, imageUrl } = Astro.props;
+---
+
+<div class="pet-card">
+  <img src={imageUrl} alt={name} class="pet-image" />
+  <div class="pet-details">
+    <h3>{name}</h3>
+    <p><strong>Порода/Особливість:</strong> {breed}</p>
+    <p><strong>Вік:</strong> {age}</p>
+  </div>
+</div>
+
+<style>
+  .pet-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pet-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
+
+  .pet-details {
+    padding: 1.2rem;
+  }
+
+  .pet-details h3 {
+    margin: 0 0 0.5rem 0;
+    color: #2c3e50;
+    font-size: 1.4rem;
+  }
+
+  .pet-details p {
+    margin: 0.3rem 0;
+    color: #555;
+    font-size: 0.95rem;
+  }
+</style>
